@@ -23,8 +23,9 @@
     cursor: pointer;
 }
 
-.item.active {
-    background: #e3f5ff;
+.item.active, .item:hover {
+    background: #eeeeee;
+    transition: all .5s;
 }
 
 .item .item-details {
