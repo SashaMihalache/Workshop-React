@@ -1,8 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter, Match } from 'react-router';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './index.css';
+
+const Root = () => (
+    <BrowserRouter>
+        <div>
+            <Match exactly pattern="/" component={App} />        
+        </div>
+    </BrowserRouter>
+);
+
+ReactDOM.render(
+    <Root />,
+    document.getElementById('root')
+);
+    
 registerServiceWorker();
