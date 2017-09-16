@@ -1,10 +1,14 @@
 import React from 'react';
 import './Button.css';
 
-const Button = () => {
+const Button = ({icon, color}) => {
+    const styles = {
+        color
+    }
+
     return (
-        <div>
-            Button
+        <div className="button" style={styles}>
+            <i className={icon}></i>
         </div>
     );
 };
