@@ -1,0 +1,7 @@
+.container {
+    display: flex;
+    border: 1px solid grey;
+    height: 500px;
+    margin: 0 auto;
+    max-width: 900px;
+}
