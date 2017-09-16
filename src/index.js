@@ -4,8 +4,6 @@ import { BrowserRouter, Match } from 'react-router';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import './index.css';
-
 const Root = () => (
     <BrowserRouter>
         <div>
