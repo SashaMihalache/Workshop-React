@@ -8,7 +8,6 @@ class Details extends Component {
     render() {
         return (
             <div className='details-container'>
-                Details Container
                 <Avatar />
                 <Field />
                 <Field />

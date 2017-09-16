@@ -11,6 +11,10 @@ class App extends Component {
     selectedContact: contacts[0],
     isEditMode: false
   }
+
+  onSearch = (e) => {
+    console.log(e.target.value);
+  }
   
   render() {
     const {
@@ -22,7 +26,8 @@ class App extends Component {
     return (
       <div className="container">
           <Contacts
-            contacts={contacts} />
+            contacts={contacts}
+            onSearch={this.onSearch} />
           <Details 
             selectedContact={selectedContact} 
             isEditMode={isEditMode} />

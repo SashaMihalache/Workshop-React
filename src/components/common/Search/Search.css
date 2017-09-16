@@ -1,0 +1,9 @@
+.search {
+	width: 100%;
+}
+
+.search input {
+    height: 30px;
+    font-size: 1.4em;
+    text-align: center;
+}

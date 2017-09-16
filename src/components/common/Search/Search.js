@@ -1,10 +1,13 @@
 import React from 'react';
 import './Search.css';
 
-const Search = () => {
+const Search = ({onSearch}) => {
     return (
-        <div>
-            Search
+        <div className="search">
+            <input 
+                onChange={onSearch}
+                type="text" 
+                placeholder='Search...'/>
         </div>
     );
 };

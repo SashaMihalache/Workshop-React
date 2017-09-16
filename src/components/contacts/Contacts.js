@@ -8,8 +8,7 @@ class Contacts extends Component {
     render() {
         return (
             <div className='contacts-container'>
-              Contacts Container
-              <Search />
+              <Search onSearch={this.props.onSearch} />
               <List />
               <Button />
               <Button />

@@ -1,4 +1,6 @@
 .contacts-container {
     flex: 1;
     border:1px solid grey;
+    display: flex;
+    flex-direction: column;
 }
