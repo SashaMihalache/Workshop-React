@@ -9,7 +9,7 @@ class Contacts extends Component {
         return (
             <div className='contacts-container'>
               <Search onSearch={this.props.onSearch} />
-              <List />
+              <List contacts={this.props.contacts} />
               <Button />
               <Button />
             </div>
