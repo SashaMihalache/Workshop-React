@@ -13,7 +13,11 @@ class App extends Component {
   }
 
   onSearch = (e) => {
-    console.log(e.target.value);
+    const name = e.target.value.toLowerCase();
+    this.setState({
+      contacts: contacts.filter(item => item.name.toLowerCase().includes(name))
+    });
+    
   }
 
   onContactItemClick = (id) => {
