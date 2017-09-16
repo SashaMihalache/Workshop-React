@@ -1,4 +1,5 @@
 const users = [{
+    "isActive": true,
     "gender": "female",
     "name": "Heidi Bradley",
     "address": "7917 e north st",
@@ -13,6 +14,7 @@ const users = [{
     "nat": "AU",
     "notes": "Likes dogs but is affraid of cats. It's a rare condition called catphodoglovia."
 }, {
+    "isActive": false,
     "gender": "female",
     "name": "Maria Popescu",
     "address": "6563 baisoara",
@@ -27,6 +29,7 @@ const users = [{
     "nat": "IR",
     "notes": "Likes dogs but is affraid of cats. It's a rare condition called catphodoglovia."
 }, {
+    "isActive": false,
     "gender": "male",
     "name": "Jack Montgomery",
     "address": "7333 springfield road",
@@ -41,6 +44,7 @@ const users = [{
     "nat": "IE",
     "notes": "Likes dogs but is affraid of cats. It's a rare condition called catphodoglovia."
 }, {
+    "isActive": false,
     "gender": "female",
     "name": "Sara Wainio",
     "address": "9147 bulevardi",
@@ -56,6 +60,7 @@ const users = [{
     "nat": "FI",
     "notes": "Likes dogs but is affraid of cats. It's a rare condition called catphodoglovia."
 }, {
+    "isActive": false,
     "gender": "female",
     "name": "Pauline Richard",
     "address": "4374 grande rue",
@@ -70,6 +75,7 @@ const users = [{
     "nat": "CH",
     "notes": "Likes dogs but is affraid of cats. It's a rare condition called catphodoglovia."
 }, {
+    "isActive": false,
     "gender": "female",
     "name": "Anna Robinson",
     "address": "7371 armagh street",
@@ -84,6 +90,7 @@ const users = [{
     "nat": "NZ",
     "notes": "Likes dogs but is affraid of cats. It's a rare condition called catphodoglovia."
 }, {
+    "isActive": false,
     "gender": "female",
     "name": "Vicenta Bravo",
     "address": "4755 calle de arturo soria",
@@ -99,6 +106,7 @@ const users = [{
     "nat": "ES",
     "notes": "Likes dogs but is affraid of cats. It's a rare condition called catphodoglovia."
 }, {
+    "isActive": false,
     "gender": "male",
     "name": "Leoberto Nascimento",
     "address": "7056 rua espirito santo ",
@@ -113,6 +121,7 @@ const users = [{
     "nat": "BR",
     "notes": "Likes dogs but is affraid of cats. It's a rare condition called catphodoglovia."
 }, {
+    "isActive": false,
     "gender": "male",
     "name": "Konsta Latt",
     "address": "2975 tehtaankatu",
@@ -127,6 +136,7 @@ const users = [{
     "nat": "FI",
     "notes": "Likes dogs but is affraid of cats. It's a rare condition called catphodoglovia."
 }, {
+    "isActive": false,
     "gender": "female",
     "name": "Saakje Snepvangers",
     "address": "8362 donkerstraat",

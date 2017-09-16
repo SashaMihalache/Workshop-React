@@ -8,6 +8,7 @@ class Details extends Component {
     render() {
         return (
             <div className='details-container'>
+                {this.props.selectedContact.name}
                 <Avatar />
                 <Field />
                 <Field />

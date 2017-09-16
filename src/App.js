@@ -15,6 +15,18 @@ class App extends Component {
   onSearch = (e) => {
     console.log(e.target.value);
   }
+
+  onContactItemClick = (id) => {
+    const newContacts = [...this.state.contacts.map(item => {
+      item.id === id ? item.isActive = true: item.isActive = false;
+      return item;
+    })]
+
+    this.setState({
+      contacts: newContacts,
+      selectedContact: newContacts.find(item => item.id === id)
+    })
+  }
   
   render() {
     const {
@@ -27,7 +39,8 @@ class App extends Component {
       <div className="container">
           <Contacts
             contacts={contacts}
-            onSearch={this.onSearch} />
+            onSearch={this.onSearch}
+            onContactItemClick={this.onContactItemClick} />
           <Details 
             selectedContact={selectedContact} 
             isEditMode={isEditMode} />

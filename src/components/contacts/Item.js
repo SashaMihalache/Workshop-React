@@ -1,9 +1,14 @@
 import React from 'react';
 import Avatar from '../common/Avatar/Avatar';
 
-const Item = ({ contact }) => {
+const Item = ({ contact, onContactItemClick }) => {
+
+    const isActive = () => (
+        contact.isActive ? 'item active' : 'item'
+    )
+
     return (
-        <div className='item'>
+        <div onClick={() => onContactItemClick(contact.id)} className={isActive()}>
             <Avatar url={contact.picture.thumbnail} />
             <div className="item-details">
                 <div className="item-name">{contact.name}</div>

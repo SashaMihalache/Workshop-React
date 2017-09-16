@@ -9,7 +9,9 @@ class Contacts extends Component {
         return (
             <div className='contacts-container'>
               <Search onSearch={this.props.onSearch} />
-              <List contacts={this.props.contacts} />
+              <List 
+                contacts={this.props.contacts} 
+                onContactItemClick={this.props.onContactItemClick} />
               <Button />
               <Button />
             </div>
