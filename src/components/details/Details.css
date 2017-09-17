@@ -7,3 +7,30 @@
     flex-direction: column;
     align-items: center;
 }
+
+.details-container .main {
+    margin-top: 10px;
+}
+
+.details-container .secondary {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex:2;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.details-container .actions {
+    flex: .5;
+}
+
+.details-container .field {
+    color: #525252;
+    font-family: sans-serif;
+}
+
+.details-container .field.large {
+    font-size: 1.5em;
+    font-weight: 700;
+}

@@ -14,6 +14,8 @@ class App extends Component {
     isEditMode: false
   }
 
+  toggleEditMode = () => this.setState({ isEditMode : !this.state.isEditMode});
+
   onSearch = (e) => {
     const name = e.target.value.toLowerCase();
     this.setState({
@@ -37,13 +39,9 @@ class App extends Component {
   onAddContactClick = () => {
     const newContact = ContactCreator();
     this.setState(prevState => ({
-      contacts: [
-        ...setContactsToInactive(prevState.contacts), 
-        newContact
-      ],
+      contacts: [...setContactsToInactive(prevState.contacts), newContact],
       selectedContact: newContact
     }));
-    
     scrollToItem('contacts-list');
   }
 
@@ -55,6 +53,10 @@ class App extends Component {
         selectedContact: prevState.contacts[0]
       }));
     }
+  }
+
+  onUpdateContact = (value, type) => {
+    console.log(value, type);
   }
   
   render() {
@@ -73,6 +75,8 @@ class App extends Component {
             onAddContactClick={this.onAddContactClick}
             onDeleteContactClick={this.onDeleteContactClick} />
           <Details 
+            toggleEditMode={this.toggleEditMode}
+            onUpdateContact={this.onUpdateContact}
             selectedContact={selectedContact} 
             isEditMode={isEditMode} />
       </div>
