@@ -14,6 +14,7 @@
 
 .details-container .secondary {
     margin-top: 20px;
+    width: 80%;
     display: flex;
     flex-direction: column;
     flex:2;
@@ -23,11 +24,33 @@
 
 .details-container .actions {
     flex: .5;
+    width: 100px;
 }
 
 .details-container .field {
     color: #525252;
     font-family: sans-serif;
+}
+
+input {
+    padding: 8px 0 3px;
+	margin-bottom: 7px !important;
+	color: #525252;
+	height: 18px;
+	margin: 0;
+	border: 1px solid #8ec9fd;
+    border-width: 0 0 2px 0;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+input.notes {
+    font-size: 14px;
+}
+
+input .large {
+    font-size: 2em;
 }
 
 .details-container .field.large {

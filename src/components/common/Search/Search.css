@@ -3,7 +3,10 @@
 }
 
 .search input {
+    width: 99%;
+    border:none;
+    border-bottom: 1px solid grey;
     height: 30px;
-    font-size: 1.4em;
+    font-size: 1em;
     text-align: center;
 }
