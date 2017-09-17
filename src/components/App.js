@@ -39,9 +39,13 @@ class App extends Component {
 
   onDeleteContactClick = () => {
     if(window.confirm(`You sure u wanna delete ${this.state.selectedContact.name} from your life, fam?`)) {
+      const newContacts = this.state.contacts.filter(item => item.id !== this.state.selectedContact.id);
+      const resetContact = newContacts[0];
+      resetContact.isActive = true;
       this.setState(prevState => ({
-        contacts: prevState.contacts.filter(item => item.id !== prevState.selectedContact.id),
-        selectedContact: prevState.contacts[0]
+        contacts: newContacts,
+        selectedContact: resetContact,
+        isEditMode: false
       }));
     }
   }
