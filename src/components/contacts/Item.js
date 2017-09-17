@@ -7,8 +7,12 @@ const Item = ({ contact, onContactItemClick }) => {
         contact.isActive ? 'item active' : 'item'
     )
 
+    const onClickItem = () => {
+        onContactItemClick(contact.id);
+    }
+
     return (
-        <div onClick={() => onContactItemClick(contact.id)} className={isActive()}>
+        <div onClick={onClickItem} className={isActive()}>
             <Avatar url={contact.picture.thumbnail} />
             <div className="item-details">
                 <div className="item-name">{contact.name}</div>
