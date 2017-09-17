@@ -17,14 +17,13 @@ class App extends Component {
   toggleEditMode = () => this.setState({ isEditMode : !this.state.isEditMode});
 
   onContactItemClick = (id) => {
-    const newContacts = [...this.state.contacts.map(item => {
-      item.id === id ? item.isActive = true: item.isActive = false;
-      return item;
-    })]
+    const newContacts = setContactsToInactive(this.state.contacts);
+    const newSelectedContact = this.state.contacts.find(item => item.id === id);
+    newSelectedContact.isActive = true;
 
     this.setState({
       contacts: newContacts,
-      selectedContact: newContacts.find(item => item.id === id)
+      selectedContact: newSelectedContact
     })
   }
 
@@ -39,8 +38,7 @@ class App extends Component {
   }
 
   onDeleteContactClick = () => {
-    const choice = window.confirm(`You sure u wanna delete ${this.state.selectedContact.name} from your life, fam?`);
-    if(choice) {
+    if(window.confirm(`You sure u wanna delete ${this.state.selectedContact.name} from your life, fam?`)) {
       this.setState(prevState => ({
         contacts: prevState.contacts.filter(item => item.id !== prevState.selectedContact.id),
         selectedContact: prevState.contacts[0]
