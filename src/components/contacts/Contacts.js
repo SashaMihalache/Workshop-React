@@ -13,8 +13,13 @@ class Contacts extends Component {
                     contacts={this.props.contacts}
                     onContactItemClick={this.props.onContactItemClick} />
                 <div className="buttons-container">
-                    <Button icon='fa fa-plus' color='#4267b2'/>
-                    <Button icon='fa fa-trash-o'color='#880000' />
+                    <Button 
+                        icon='fa fa-plus' 
+                        color='#4267b2' 
+                        onClick={this.props.onAddContactClick} />
+                    <Button 
+                        icon='fa fa-trash-o'
+                        color='#880000' />
                 </div>
             </div>
         );

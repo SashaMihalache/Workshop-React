@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Contacts from './components/contacts/Contacts';
 import Details from './components/details/Details';
 import contacts from './helpers/mockData';
+import { setContactsToInactive, ContactCreator} from './helpers/contacts';
+import {scrollToItem} from './helpers/dom';
 
 import './App.css';
 
@@ -31,6 +33,19 @@ class App extends Component {
       selectedContact: newContacts.find(item => item.id === id)
     })
   }
+
+  onAddContactClick = () => {
+    const newContact = ContactCreator();
+    this.setState(prevState => ({
+      contacts: [
+        ...setContactsToInactive(prevState.contacts), 
+        newContact
+      ],
+      selectedContact: newContact
+    }));
+    
+    scrollToItem('contacts-list');
+  }
   
   render() {
     const {
@@ -44,7 +59,8 @@ class App extends Component {
           <Contacts
             contacts={contacts}
             onSearch={this.onSearch}
-            onContactItemClick={this.onContactItemClick} />
+            onContactItemClick={this.onContactItemClick}
+            onAddContactClick={this.onAddContactClick} />
           <Details 
             selectedContact={selectedContact} 
             isEditMode={isEditMode} />
