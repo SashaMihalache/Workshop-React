@@ -46,6 +46,16 @@ class App extends Component {
     
     scrollToItem('contacts-list');
   }
+
+  onDeleteContactClick = () => {
+    const choice = window.confirm(`You sure u wanna delete ${this.state.selectedContact.name} from your life, fam?`);
+    if(choice) {
+      this.setState(prevState => ({
+        contacts: prevState.contacts.filter(item => item.id !== prevState.selectedContact.id),
+        selectedContact: prevState.contacts[0]
+      }));
+    }
+  }
   
   render() {
     const {
@@ -60,7 +70,8 @@ class App extends Component {
             contacts={contacts}
             onSearch={this.onSearch}
             onContactItemClick={this.onContactItemClick}
-            onAddContactClick={this.onAddContactClick} />
+            onAddContactClick={this.onAddContactClick}
+            onDeleteContactClick={this.onDeleteContactClick} />
           <Details 
             selectedContact={selectedContact} 
             isEditMode={isEditMode} />

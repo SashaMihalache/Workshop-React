@@ -19,7 +19,8 @@ class Contacts extends Component {
                         onClick={this.props.onAddContactClick} />
                     <Button 
                         icon='fa fa-trash-o'
-                        color='#880000' />
+                        color='#880000'
+                        onClick={this.props.onDeleteContactClick} />
                 </div>
             </div>
         );
