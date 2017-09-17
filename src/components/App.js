@@ -39,11 +39,11 @@ class App extends Component {
 
   onDeleteContactClick = () => {
     if(window.confirm(`You sure u wanna delete ${this.state.selectedContact.name} from your life, fam?`)) {
-      const newContacts = this.state.contacts.filter(item => item.id !== this.state.selectedContact.id);
-      const resetContact = newContacts[0];
+      const newContactsList = this.state.contacts.filter(item => item.id !== this.state.selectedContact.id);
+      const resetContact = newContactsList[0];
       resetContact.isActive = true;
       this.setState(prevState => ({
-        contacts: newContacts,
+        contacts: newContactsList,
         selectedContact: resetContact,
         isEditMode: false
       }));
@@ -52,13 +52,11 @@ class App extends Component {
 
   onUpdateContact = (value, type) => {
     const updatedContact = {...this.state.selectedContact};
+    const updatedContactList = this.state.contacts.map(item => item.id === updatedContact.id ? updatedContact: item);
     updatedContact[type] = value;
     
-    
     this.setState({
-      contacts: this.state.contacts.map(item => 
-        item.id === updatedContact.id ? updatedContact: item
-      ),
+      contacts: updatedContactList,
       selectedContact: updatedContact
     });
   }
