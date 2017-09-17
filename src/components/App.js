@@ -14,7 +14,7 @@ class App extends Component {
     isEditMode: false
   }
 
-  toggleEditMode = () => this.setState({ isEditMode : !this.state.isEditMode});
+  onToggleEditMode = () => this.setState({ isEditMode : !this.state.isEditMode});
 
   onContactItemClick = (id) => {
     const newContacts = setContactsToInactive(this.state.contacts);
@@ -78,7 +78,7 @@ class App extends Component {
               onAddContactClick={this.onAddContactClick}
               onDeleteContactClick={this.onDeleteContactClick} />
             <Details 
-              toggleEditMode={this.toggleEditMode}
+              onToggleEditMode={this.onToggleEditMode}
               onUpdateContact={this.onUpdateContact}
               selectedContact={selectedContact} 
               isEditMode={isEditMode} />

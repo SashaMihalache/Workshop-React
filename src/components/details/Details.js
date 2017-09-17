@@ -13,7 +13,7 @@ class Details extends Component {
             selectedContact, 
             isEditMode, 
             onUpdateContact,
-            toggleEditMode
+            onToggleEditMode
         } = this.props;
 
         return (
@@ -50,7 +50,7 @@ class Details extends Component {
                         text={selectedContact.notes} />
                 </div>                
                 <div className="actions">
-                    <Button onClick={toggleEditMode} icon={this.handleButtonIcon()} />
+                    <Button onClick={onToggleEditMode} icon={this.handleButtonIcon()} />
                 </div>
             </div>
         );
