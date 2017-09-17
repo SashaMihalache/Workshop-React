@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Contacts from './components/contacts/Contacts';
-import Details from './components/details/Details';
-import contacts from './helpers/mockData';
-import { setContactsToInactive, ContactCreator} from './helpers/contacts';
-import {scrollToItem} from './helpers/dom';
+import Contacts from './contacts/Contacts';
+import Details from './details/Details';
+import contacts from '../helpers/mockData';
+import { setContactsToInactive, ContactCreator} from '../helpers/contacts';
+import {scrollToItem} from '../helpers/dom';
 
 import './App.css';
 
@@ -40,7 +40,8 @@ class App extends Component {
     const newContact = ContactCreator();
     this.setState(prevState => ({
       contacts: [...setContactsToInactive(prevState.contacts), newContact],
-      selectedContact: newContact
+      selectedContact: newContact,
+      isEditMode: true
     }));
     scrollToItem('contacts-list');
   }
@@ -56,7 +57,16 @@ class App extends Component {
   }
 
   onUpdateContact = (value, type) => {
-    console.log(value, type);
+    const updatedContact = {...this.state.selectedContact};
+    updatedContact[type] = value;
+    
+    
+    this.setState({
+      contacts: this.state.contacts.map(item => 
+        item.id === updatedContact.id ? updatedContact: item
+      ),
+      selectedContact: updatedContact
+    });
   }
   
   render() {
@@ -67,18 +77,21 @@ class App extends Component {
     } = this.state;
 
     return (
-      <div className="container">
-          <Contacts
-            contacts={contacts}
-            onSearch={this.onSearch}
-            onContactItemClick={this.onContactItemClick}
-            onAddContactClick={this.onAddContactClick}
-            onDeleteContactClick={this.onDeleteContactClick} />
-          <Details 
-            toggleEditMode={this.toggleEditMode}
-            onUpdateContact={this.onUpdateContact}
-            selectedContact={selectedContact} 
-            isEditMode={isEditMode} />
+      <div>
+        <h1>Address Book</h1>
+        <div className="container">
+            <Contacts
+              contacts={contacts}
+              onSearch={this.onSearch}
+              onContactItemClick={this.onContactItemClick}
+              onAddContactClick={this.onAddContactClick}
+              onDeleteContactClick={this.onDeleteContactClick} />
+            <Details 
+              toggleEditMode={this.toggleEditMode}
+              onUpdateContact={this.onUpdateContact}
+              selectedContact={selectedContact} 
+              isEditMode={isEditMode} />
+        </div>
       </div>
     );
   }

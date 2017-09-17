@@ -23,6 +23,10 @@
     cursor: pointer;
 }
 
+.item img {
+    max-width: 48px;
+}
+
 .item.active, .item:hover {
     background: #eeeeee;
     transition: all .5s;
