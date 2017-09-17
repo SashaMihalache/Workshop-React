@@ -16,14 +16,6 @@ class App extends Component {
 
   toggleEditMode = () => this.setState({ isEditMode : !this.state.isEditMode});
 
-  onSearch = (e) => {
-    const name = e.target.value.toLowerCase();
-    this.setState({
-      contacts: contacts.filter(item => item.name.toLowerCase().includes(name))
-    });
-    
-  }
-
   onContactItemClick = (id) => {
     const newContacts = [...this.state.contacts.map(item => {
       item.id === id ? item.isActive = true: item.isActive = false;
@@ -82,7 +74,6 @@ class App extends Component {
         <div className="container">
             <Contacts
               contacts={contacts}
-              onSearch={this.onSearch}
               onContactItemClick={this.onContactItemClick}
               onAddContactClick={this.onAddContactClick}
               onDeleteContactClick={this.onDeleteContactClick} />
